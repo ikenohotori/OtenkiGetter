@@ -27,7 +27,7 @@ const getfashion = async (req, res) => {
     try
     {
          // OpenWetherMap呼び出し
-        await fetch("http://api.openweathermap.org/data/2.5/forecast?q=kawasaki&lang=Ja&APPID=86092c68620468ae0657fea83ed51789&units=metric")
+        await fetch(process.env.Weather_Heroku_URL || process.env.Weather_URL)
         .then(response => response.json())
         .then((data) => {
             
